@@ -1,0 +1,3 @@
+rootProject.name = 'uapi.tutorial'
+
+include 'uapi.tutorial.quickstart'
