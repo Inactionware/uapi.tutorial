@@ -1,0 +1,10 @@
+app:
+  name: Hello
+  activate-profile: HelloAppProfile
+
+profiles:
+  - name: HelloAppProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - Hello
