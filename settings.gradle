@@ -1,3 +1,5 @@
 rootProject.name = 'uapi.tutorial'
 
 include 'uapi.tutorial.quickstart'
+include 'uapi.tutorial.app'
+include 'uapi.tutorial.service'

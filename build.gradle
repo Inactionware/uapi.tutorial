@@ -80,6 +80,17 @@ subprojects {
         def cfgDir = file("conf")
         outputs.dir cfgDir
     }
+
+    distributions {
+        main {
+            baseName = project.name
+            contents {
+                from (copyConfig) {
+                    into "conf"
+                }
+            }
+        }
+    }
 }
 
 task wrapper(type: Wrapper) {
