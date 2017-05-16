@@ -20,6 +20,17 @@ dependencies {
     compile "uapi:uapi.app:${uapi_cornerstone_version}"
 }
 
+distributions {
+    main {
+        baseName = 'uapi-tutorial-quickstart'
+        contents {
+            from (copyConfig) {
+                into "conf"
+            }
+        }
+    }
+}
+
 publishing {
     publications {
         mavenPublication(MavenPublication) {

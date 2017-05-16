@@ -30,10 +30,9 @@ allprojects {
 
 subprojects {
     apply plugin: 'java'
-//    apply plugin: 'groovy'
-//    apply plugin: 'jacoco'
     apply plugin: 'maven'
     apply plugin: 'maven-publish'
+    apply plugin: 'application'
 
     group = "${project_group}"
     version = "${project_version}"
@@ -49,7 +48,7 @@ subprojects {
         exclude('**/*.java')
     }
 
-    def generatedSources = ['**/*_Generated.*']
+//    def generatedSources = ['**/*_Generated.*']
 
 //    test {
 //        jacoco {
@@ -74,51 +73,18 @@ subprojects {
 //    }
 //
 //    build.dependsOn jacocoTestReport
+
+    mainClassName = 'uapi.app.Bootstrap'
+
+    task copyConfig {
+        def cfgDir = file("conf")
+        outputs.dir cfgDir
+    }
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = "${gradle_version}"
 }
-
-//def publishedProjects = subprojects.findAll { it.path != ':uapi.example' }
-
-//task jacocoRootReport(type: JacocoReport, group: 'Coverage reports') {
-//    description = 'Generates an aggregate report from all subprojects'
-//    dependsOn(publishedProjects.test)
-//
-//    additionalSourceDirs = files(publishedProjects.sourceSets.main.allSource.srcDirs)
-//    sourceDirectories = files(publishedProjects.sourceSets.main.allSource.srcDirs)
-//    classDirectories = files(publishedProjects.sourceSets.main.output)
-//    executionData = files(publishedProjects.jacocoTestReport.executionData)
-//
-//    reports {
-//        html.enabled = true // human readable
-//        xml.enabled = true // required by coveralls
-//    }
-//
-//    doFirst {
-//        executionData = files(executionData.findAll { it.exists() })
-//    }
-//}
-//
-//configurations {
-//    codacy
-//}
-//
-//dependencies {
-//    codacy group: 'com.codacy', name: 'codacy-coverage-reporter', version: '1.0.7'
-//}
-//
-//task uploadCoverageToCodacy(type: JavaExec) {
-//    main = "com.codacy.CodacyCoverageReporter"
-//    classpath = configurations.codacy
-//    args = [
-//            "-l",
-//            "Java",
-//            "-r",
-//            "${buildDir}/reports/jacoco/jacocoRootReport/jacocoRootReport.xml"
-//    ]
-//}
 
 def getProjectVersion() {
     def release = project.hasProperty("project_release") ? project.project_release.toBoolean() : null
