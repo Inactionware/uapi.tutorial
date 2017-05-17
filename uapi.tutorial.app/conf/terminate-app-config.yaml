@@ -1,0 +1,9 @@
+app:
+  active-profile: TerminateAppProfile
+
+profiles:
+  - name: TerminateAppProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - Terminator

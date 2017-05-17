@@ -1,0 +1,9 @@
+app:
+  active-profile: HumanAppProfile
+
+profiles:
+  - name: HumanAppProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - HumanApp
