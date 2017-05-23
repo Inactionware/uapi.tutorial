@@ -1,11 +1,13 @@
 package uapi.tutorial.app;
 
+import uapi.app.AppShutdownEvent;
 import uapi.app.AppStartupEvent;
 import uapi.app.ExitSystemRequest;
 import uapi.behavior.*;
 import uapi.behavior.annotation.Action;
 import uapi.behavior.annotation.ActionDo;
 import uapi.event.IEventBus;
+import uapi.log.ILogger;
 import uapi.service.annotation.*;
 
 /**
@@ -19,30 +21,39 @@ public class Terminator {
     protected IResponsibleRegistry _respReg;
 
     @Inject
-    protected IEventBus _eventBus;
+    protected ILogger _logger;
 
     @OnActivate
     public void activate() {
         IResponsible resp = this._respReg.register("Terminator");
         resp.newBehavior("Do Something", AppStartupEvent.class, AppStartupEvent.TOPIC)
-                .then(TerminateApp.actionId)
-                .traceable(true)
+                .then(StartUp.actionId)
+                .onSuccess((input, ctx) -> new ExitSystemRequest("Terminator"))
                 .build();
-        BehaviorFinishedEventHandler finHandler = (event) -> new ExitSystemRequest("Terminator");
-        resp.on(finHandler);
+        resp.newBehavior("Shutdown flow", AppShutdownEvent.class, AppShutdownEvent.TOPIC)
+                .then(CleanUp.actionId)
+                .build();
+    }
+
+    @OnDeactivate
+    public void deactivate() {
+        this._logger.info("The service is deactivated - {}", Terminator.class.getName());
     }
 
     @Service
     @Action
     @Tag("Terminator")
-    public static class TerminateApp {
+    public static class StartUp {
 
-        private static final ActionIdentify actionId = ActionIdentify.toActionId(TerminateApp.class);
+        private static final ActionIdentify actionId = ActionIdentify.toActionId(StartUp.class);
+
+        @Inject
+        protected ILogger _logger;
 
         @ActionDo
-        public boolean doSomething(AppStartupEvent event) throws Exception {
+        public void doSomething(AppStartupEvent event) throws Exception {
+            this._logger.info("Do start up action");
             Thread.sleep(1000);
-            return true;
         }
     }
 
@@ -53,8 +64,12 @@ public class Terminator {
 
         private static final ActionIdentify actionId = ActionIdentify.toActionId(CleanUp.class);
 
-        @ActionDo
-        public void cleanUp(String tt) {}
+        @Inject
+        protected ILogger _logger;
 
+        @ActionDo
+        public void cleanUp(AppShutdownEvent event) {
+            this._logger.info("Do clean up action");
+        }
     }
 }
