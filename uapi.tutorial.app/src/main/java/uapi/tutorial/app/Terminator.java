@@ -2,11 +2,10 @@ package uapi.tutorial.app;
 
 import uapi.app.AppShutdownEvent;
 import uapi.app.AppStartupEvent;
-import uapi.app.ExitSystemRequest;
+import uapi.app.terminal.ExitSystemRequest;
 import uapi.behavior.*;
 import uapi.behavior.annotation.Action;
 import uapi.behavior.annotation.ActionDo;
-import uapi.event.IEventBus;
 import uapi.log.ILogger;
 import uapi.service.annotation.*;
 
