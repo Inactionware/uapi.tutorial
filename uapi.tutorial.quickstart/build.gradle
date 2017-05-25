@@ -18,6 +18,7 @@ dependencies {
     compile "uapi:uapi.event:${uapi_cornerstone_version}"
     compile "uapi:uapi.behavior:${uapi_cornerstone_version}"
     compile "uapi:uapi.app:${uapi_cornerstone_version}"
+    runtime "uapi:uapi.app.terminal:${uapi_facility_version}"
 }
 
 publishing {
