@@ -12,12 +12,20 @@ plugins {
 }
 
 dependencies {
-    compile "uapi:uapi.service:${uapi_cornerstone_version}"
-    compile "uapi:uapi.config:${uapi_cornerstone_version}"
-    compile "uapi:uapi.log:${uapi_cornerstone_version}"
-    compile "uapi:uapi.event:${uapi_cornerstone_version}"
-    compile "uapi:uapi.behavior:${uapi_cornerstone_version}"
-    compile "uapi:uapi.app:${uapi_cornerstone_version}"
+    compileOnly (
+            "uapi:uapi.service.apt:${uapi_cornerstone_version}",
+            "uapi:uapi.behavior.apt:${uapi_cornerstone_version}"
+    )
+
+    compile (
+            "uapi:uapi.service:${uapi_cornerstone_version}",
+            "uapi:uapi.config:${uapi_cornerstone_version}",
+            "uapi:uapi.log:${uapi_cornerstone_version}",
+            "uapi:uapi.event:${uapi_cornerstone_version}",
+            "uapi:uapi.behavior:${uapi_cornerstone_version}",
+            "uapi:uapi.app:${uapi_cornerstone_version}"
+    )
+
     runtime "uapi:uapi.app.terminal:${uapi_facility_version}"
 }
 
