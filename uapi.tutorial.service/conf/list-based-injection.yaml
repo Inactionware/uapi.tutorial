@@ -1,0 +1,9 @@
+app:
+  active-profile: ListBasedInjection
+
+profiles:
+  - name: ListBasedInjection
+    model: include
+    matching: satisfy-any
+    tags:
+      - ListBasedInjection

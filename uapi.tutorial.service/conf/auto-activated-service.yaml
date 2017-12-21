@@ -1,0 +1,9 @@
+app:
+  active-profile: AutoActivatedService
+
+profiles:
+  - name: AutoActivatedService
+    model: include
+    matching: satisfy-any
+    tags:
+      - AutoActivated

@@ -1,0 +1,9 @@
+app:
+  active-profile: IdBasedInjection
+
+profiles:
+  - name: IdBasedInjection
+    model: include
+    matching: satisfy-any
+    tags:
+      - IdBasedInjection

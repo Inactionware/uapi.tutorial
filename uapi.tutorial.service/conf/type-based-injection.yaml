@@ -1,0 +1,9 @@
+app:
+  active-profile: TypeBasedInjection
+
+profiles:
+  - name: TypeBasedInjection
+    model: include
+    matching: satisfy-any
+    tags:
+      - TypeBasedInjection

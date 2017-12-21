@@ -1,0 +1,9 @@
+app:
+  active-profile: FactoryBasedInjection
+
+profiles:
+  - name: FactoryBasedInjection
+    model: include
+    matching: satisfy-any
+    tags:
+      - FactoryBasedInjection

@@ -1,0 +1,9 @@
+app:
+  active-profile: MethodBasedInjection
+
+profiles:
+  - name: MethodBasedInjection
+    model: include
+    matching: satisfy-any
+    tags:
+      - MethodBasedInjection

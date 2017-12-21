@@ -1,0 +1,9 @@
+app:
+  active-profile: MapBasedInjection
+
+profiles:
+  - name: MapBasedInjection
+    model: include
+    matching: satisfy-any
+    tags:
+      - MapBasedInjection

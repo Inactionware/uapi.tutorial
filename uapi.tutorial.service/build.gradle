@@ -25,6 +25,8 @@ dependencies {
             "uapi:uapi.behavior:${uapi_cornerstone_version}",
             "uapi:uapi.app:${uapi_cornerstone_version}"
     )
+
+    runtime ("uapi:uapi.app.terminal:${uapi_facility_version}")
 }
 
 publishing {
