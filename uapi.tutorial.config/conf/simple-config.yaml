@@ -1,0 +1,17 @@
+app:
+  active-profile: SimpleConfigAppProfile
+
+profiles:
+  - name: SimpleConfigAppProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - SimpleConfig
+
+cfg:
+  string-value: TestString
+  int-value: 2
+  long-value: 300
+  float-value: 1.1
+  double-value: 23.2
+  boolean-value: false
