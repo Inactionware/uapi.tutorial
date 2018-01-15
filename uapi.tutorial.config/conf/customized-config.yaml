@@ -1,0 +1,16 @@
+app:
+  active-profile: CustomizedConfigAppProfile
+
+profiles:
+  - name: CustomizedConfigAppProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - CustomizedConfig
+
+cfg:
+  users:
+    - name: Mike
+      addresses:
+        office: Office address
+        home: Home address
