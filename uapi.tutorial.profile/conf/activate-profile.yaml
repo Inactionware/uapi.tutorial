@@ -1,0 +1,14 @@
+app:
+  active-profile: MyProfile2
+
+profiles:
+  - name: MyProfile1
+    model: include
+    matching: satisfy-any
+    tags:
+      - MyTag1
+  - name: MyProfile2
+    model: include
+    matching: satisfy-any
+    tags:
+      - MyTag2
