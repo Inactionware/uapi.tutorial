@@ -1,0 +1,9 @@
+app:
+  active-profile: SimpleBehaviorProfile
+
+profiles:
+  - name: SimpleBehaviorProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - SimpleBehavior
