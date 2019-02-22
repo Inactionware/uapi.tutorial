@@ -3,7 +3,7 @@ jdk:
     - oraclejdk8
 install:
   - ./setup-env.sh
-script: ./gradlew --refresh-dependencies --stacktrace
+script: ./gradlew clean build --refresh-dependencies --stacktrace
 after_success:
     - ./gradlew bintrayUpload
 before_cache:
