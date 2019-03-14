@@ -1,0 +1,9 @@
+app:
+  active-profile: UserLoginProfile
+
+profiles:
+  - name: UserLoginProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - UserLogin
