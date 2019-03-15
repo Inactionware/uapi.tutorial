@@ -1,0 +1,9 @@
+app:
+  active-profile: SayGreetingProfile
+
+profiles:
+  - name: SayGreetingProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - SayGreeting
