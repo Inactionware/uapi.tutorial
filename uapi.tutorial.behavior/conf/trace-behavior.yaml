@@ -1,0 +1,9 @@
+app:
+  active-profile: TraceBehaviorProfile
+
+profiles:
+  - name: TraceBehaviorProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - TraceBehavior
