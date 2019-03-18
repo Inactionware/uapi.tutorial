@@ -21,7 +21,8 @@ dependencies {
         coordinate(cornerstoneProjects.service),
         coordinate(cornerstoneProjects.config),
         coordinate(cornerstoneProjects.log),
-        coordinate(cornerstoneProjects.app)
+        coordinate(cornerstoneProjects.app),
+        coordinate(facilityProjects.behavior_common)
     )
 
     runtime (

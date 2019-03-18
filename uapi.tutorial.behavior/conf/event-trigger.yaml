@@ -1,0 +1,9 @@
+app:
+  active-profile: EventTriggerProfile
+
+profiles:
+  - name: EventTriggerProfile
+    model: include
+    matching: satisfy-any
+    tags:
+      - EventTrigger
