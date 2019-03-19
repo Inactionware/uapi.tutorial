@@ -24,7 +24,7 @@ public class TraceApp {
     private final BehaviorExecutingEventHandler execHandler = (execEvent) -> {
         this._logger.info(
                 "Action executed: {}\n\tAction inputs: {}\n\tAction outputs: {}",
-                execEvent.executingActionId().toString(),
+                execEvent.currentActionId().toString(),
                 CollectionHelper.asString(execEvent.currentInputs()),
                 CollectionHelper.asString(execEvent.currentOutputs()));
         return null;
