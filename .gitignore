@@ -52,6 +52,7 @@ build
 .settings
 .project
 .classpath
+bin/
 
 # IntelliJ IDEA project files
 #=================================
