@@ -7,12 +7,6 @@
  * use the project into a commercial product
  */
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-}
-
 ext {
     thisRepo = 'tutorial'
 }
@@ -24,17 +18,6 @@ apply from: '.config/uapi/facility.config.gradle'
 apply from: '.config/uapi/tutorial.config.gradle'
 apply from: '.config/uapi/functions.gradle'
 
-allprojects {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        jcenter()
-        maven { url "http://dl.bintray.com/typesafe/maven-releases" }
-        maven { url "http://dl.bintray.com/inactionware/maven-snapshot" }
-        maven { url "http://dl.bintray.com/inactionware/maven-release" }
-    }
-}
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
@@ -43,8 +26,8 @@ subprojects {
 
     group = "${allCfg.group}"
     version = getBuildVersion(project.name)
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = 11
+    targetCompatibility = 11
 
     configurations {
         codacy
