@@ -17,19 +17,15 @@ dependencies {
     )
 
     annotationProcessor (
-            coordinate(cornerstoneProjects.service_apt),
-            coordinate(baseProjects.codegen),
-            coordinate(libs.auto_service)
+        coordinate(cornerstoneProjects.service_apt),
+        coordinate(baseProjects.codegen)
     )
 
     compile (
         coordinate(cornerstoneProjects.service),
         coordinate(cornerstoneProjects.config),
         coordinate(cornerstoneProjects.log),
-        coordinate(cornerstoneProjects.app)
-    )
-
-    runtime (
+        coordinate(cornerstoneProjects.app),
         coordinate(facilityProjects.app_terminal)
     )
 }

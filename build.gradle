@@ -33,6 +33,18 @@ subprojects {
         codacy
     }
 
+    ext.moduleName = "${project.name}"
+
+    compileJava {
+        inputs.property("moduleName", moduleName)
+        doFirst {
+            options.compilerArgs = [
+                    '--module-path', classpath.asPath,
+            ]
+            classpath = files()
+        }
+    }
+
     jar {
         manifest.attributes
         exclude('**/*.java')

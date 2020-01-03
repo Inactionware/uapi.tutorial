@@ -22,8 +22,7 @@ dependencies {
             coordinate(cornerstoneProjects.service_apt),
             coordinate(cornerstoneProjects.config_apt),
             coordinate(cornerstoneProjects.behavior_apt),
-            coordinate(baseProjects.codegen),
-            coordinate(libs.auto_service)
+            coordinate(baseProjects.codegen)
     )
 
     compile (
