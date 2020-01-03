@@ -28,6 +28,7 @@ dependencies {
         coordinate(cornerstoneProjects.config),
         coordinate(cornerstoneProjects.log),
         coordinate(cornerstoneProjects.event),
+        coordinate(cornerstoneProjects.command),
         coordinate(cornerstoneProjects.behavior),
         coordinate(cornerstoneProjects.app),
         coordinate(facilityProjects.app_terminal)
