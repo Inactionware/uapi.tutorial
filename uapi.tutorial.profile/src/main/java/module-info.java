@@ -13,5 +13,7 @@ module uapi.tutorial.profile {
     requires uapi.app;
     requires uapi.app.terminal;
 
+    exports uapi.tutorial.profile.generated to uapi.service;
+
     provides IModulePortal with TutorialProfileModulePortal;
 }

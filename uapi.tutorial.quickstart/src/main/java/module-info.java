@@ -15,5 +15,7 @@ module uapi.tutorial.quickstart {
     requires uapi.app;
     requires uapi.app.terminal;
 
+    exports uapi.tutorial.quickstart.generated to uapi.service;
+
     provides IModulePortal with TutorialQuickstartModulePortal;
 }

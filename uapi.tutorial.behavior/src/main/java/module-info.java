@@ -15,5 +15,7 @@ module uapi.tutorial.behavior {
     requires uapi.app;
     requires uapi.behavior.common;
 
+    exports uapi.tutorial.behavior.generated to uapi.service;
+
     provides IModulePortal with TutorialBehaviorModulePortal;
 }

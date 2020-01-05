@@ -17,5 +17,7 @@ module uapi.tutorial.config {
     requires uapi.app;
     requires uapi.app.terminal;
 
+    exports uapi.tutorial.config.generated to uapi.service;
+
     provides IModulePortal with TutorialConfigModulePortal;
 }
