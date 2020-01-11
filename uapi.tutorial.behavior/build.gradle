@@ -32,6 +32,7 @@ dependencies {
     )
 
     runtime (
+        coordinate(cornerstoneProjects.command),
         coordinate(facilityProjects.app_terminal)
     )
 }
