@@ -1,0 +1,9 @@
+app:
+  active-profile: PrototypeBasedInjection
+
+profiles:
+  - name: PrototypeBasedInjection
+    model: include
+    matching: satisfy-any
+    tags:
+      - PrototypeBasedInjection
